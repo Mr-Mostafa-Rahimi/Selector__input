@@ -1,0 +1,205 @@
+/* *********************************************** */
+/* do not change properties with important values */
+/* ********************************************* */
+:root {
+  --selector-one-color: rgb(40, 54, 24);
+  --selector-two-color: rgb(96, 108, 56);
+  --selector-three-color: rgb(221, 161, 94);
+  --selector-background: rgb(254, 250, 224);
+}
+
+.selector__base__style {
+  all: unset;
+  direction: rtl;
+  box-sizing: border-box;
+  outline: none;
+  margin: auto;
+  padding: 0;
+  position: relative;
+  transition: all 0.2s linear;
+  scroll-behavior: smooth;
+  font-size: 1rem;
+}
+
+.selector__input {
+  padding: 1ch 2ch;
+  border-radius: 1ch;
+  background: rgb(255, 255, 255);
+  border: .1ch solid var(--selector-two-color);
+  cursor: pointer !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  pointer-events: none !important;
+}
+
+.selector__input:hover {
+  transition: all 0.5s;
+  cursor: pointer !important;
+  scale: 1.1;
+}
+
+.selector__division {
+  width: clamp(100vw, 100vw, 100vw);
+  height: clamp(100vh, 100vh, 100vh);
+  background: rgb(0, 0, 0, 0.25);
+  padding: 2ch 5ch;
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  flex-direction: column;
+  gap: 2ch;
+  overflow: hidden;
+  animation: selector__division 0.25s linear;
+
+  @media only screen and (max-width: 800px) {
+    padding: 2ch;
+  }
+}
+
+.selector__division::before {
+  width: 5ch;
+  height: 5ch;
+  aspect-ratio: 1/1;
+  padding: 1ch;
+  margin: 0 0 0 auto;
+  background: var(--selector-background);
+  border: 0.1ch solid var(--selector-one-color);
+  box-shadow: 0 1ch 1ch rgb(0, 0, 0, 0.25);
+  border-radius: 50%;
+  content: "\2716";
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  animation: selector__division__before 0.25s linear;
+}
+
+.selector__body__division {
+  max-height: 50%;
+  width: 100%;
+  padding: 2ch;
+  margin: 0 auto;
+  border-radius: 2ch;
+  background: var(--selector-background);
+  border: 0.1ch solid var(--selector-one-color);
+  box-shadow: 0 1ch 1ch rgb(0, 0, 0, 0.25);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 2ch;
+  overflow: auto;
+  animation: selector__body__division 0.25s linear;
+  scrollbar-width: thin;
+  scrollbar-color: var(--selector-one-color) transparent;
+  scrollbar-gutter: 2px;
+}
+
+/* .selector__body__division::-webkit-scrollbar {
+  background: transparent;
+  width: 2ch;
+}
+
+.selector__body__division::-webkit-scrollbar-thumb {
+  background: var(--selector-one-color);
+  border-radius: 1ch;
+} */
+
+.selector__find__input {
+  border-radius: 1ch;
+  padding: 1ch 2ch;
+  border: 0.1ch solid var(--selector-two-color);
+  background: var(--selector-background);
+  color: rgb(0, 0, 0);
+  font-size: 1.2em;
+  font-weight: bold;
+  letter-spacing: .1ch;
+  width: 100%;
+}
+
+.selector__list__division {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2ch;
+}
+
+.selector__button {
+  width: 100%;
+  margin-left: 0;
+  padding: 1ch;
+  border-radius: 1ch;
+  background: var(--selector-two-color);
+  border: 0.1ch solid rgb(0, 0, 0, 0.25);
+  color: var(--selector-background);
+  font-size: 1.1em;
+  letter-spacing: .1ch;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 2ch;
+  cursor: pointer;
+  overflow: hidden;
+  animation: selector__button 0.5s linear;
+}
+
+.selector__button::before {
+  margin: auto 1ch;
+  rotate: 90deg;
+  content: "\275A";
+}
+
+.selector__button:hover {
+  transition: all 0.2s;
+  width: 98%;
+  flex-wrap: nowrap;
+  padding: 2ch 1ch;
+  background: var(--selector-three-color);
+  color: var(--selector-one-color);
+}
+
+.selector__button:hover::before {
+  rotate: 0deg;
+  content: "\2714";
+  scale: 1.5;
+}
+
+.selector__input__target__button {
+  width: fit-content;
+  border-radius: 1ch;
+  background: var(--selector-three-color);
+  cursor: pointer;
+  margin: 0 auto 0 0;
+  padding: 1ch 2ch;
+  letter-spacing: .1ch;
+  cursor: pointer;
+}
+
+@keyframes selector__division {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes selector__division__before {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes selector__body__division {
+  from {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+}
+
+@keyframes selector__button {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}

@@ -1,0 +1,50 @@
+@font-face {
+  font-family: "font";
+  src: url(/font.ttf);
+}
+
+* {
+  direction: rtl;
+  box-sizing: border-box;
+  outline: none;
+  margin: auto;
+  padding: 0;
+  position: relative;
+  font-family: "font";
+}
+
+html,
+body {
+  width: clamp(100vw, 100vw, 100vw);
+  height: clamp(100vh, 100vh, 100vh);
+  background: #e9ecef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5ch;
+  flex-direction: column;
+  font-size: 14px;
+}
+
+p {
+  margin: 0 auto;
+  font-size: 150%;
+}
+a {
+  margin: 0 auto;
+  text-decoration: none;
+  font-size: 125%;
+  padding: .5ch 2ch;
+  background: #283618;
+  color: #ffff;
+  border-radius: 1ch;
+}
+label {
+  margin: 0 auto;
+  border: .1ch solid rgb(0, 0, 0, .25);
+  border-radius: 1ch;
+  display: flex;
+  align-items: center;
+  gap: 2ch;
+  padding: 1ch;
+}
